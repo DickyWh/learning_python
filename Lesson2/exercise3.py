@@ -15,6 +15,7 @@ Use the .join() method to join these first three arp entries back together as a 
 
 Write this string containing the three ARP entries out to a file named "arp_entries.txt".
 """
+from __future__ import print_function, unicode_literals
 from pprint import pprint
 with open("show_arp.txt") as f:
     show_arp = f.readlines()
