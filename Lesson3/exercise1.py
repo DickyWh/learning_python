@@ -30,4 +30,3 @@ for line in vlist.splitlines():
 print()
 pprint(vlansl)
 print()
-#print(vlist)
