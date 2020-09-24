@@ -40,8 +40,19 @@ arp_table = [('10.220.88.1', '0062.ec29.70fe'),
               ('10.220.88.41', '001b.7873.5634')]
 
 for i, ip_mac in enumerate(arp_table):
-    print(ip_mac[0])
+#    print(ip_mac[0])
     mac = ip_mac[1]
     macup = mac.upper()
-    print(macup)
-    print('-'*40)
+    macup = macup.split('.')
+    macup = ''.join(macup)
+
+#inserting : betwen octets of mac addr
+    macnew = []
+    while len(macup) > 0:
+        entry = macup[:2]
+        macup = macup[2:]
+        macnew.append(entry)
+#Rebuild Mac addr with ':' between octets
+    macnew = ':'.join(macnew)
+    print(macnew)
+print('-'*40)
